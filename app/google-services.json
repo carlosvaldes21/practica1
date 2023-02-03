@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "248570957189",
+    "project_id": "autosapp-2e4e9",
+    "storage_bucket": "autosapp-2e4e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248570957189:android:c33d6ea6a8b254418fc8ec",
+        "android_client_info": {
+          "package_name": "com.carlosvaldes.practica1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248570957189-kni0pr2ad0t5gmmru80nsem09t5rlaok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRopYxNsjCTzcCVmhLlzgo2GA1LOgOeYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248570957189-kni0pr2ad0t5gmmru80nsem09t5rlaok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
