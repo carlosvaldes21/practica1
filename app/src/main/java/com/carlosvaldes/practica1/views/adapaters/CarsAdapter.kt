@@ -15,6 +15,7 @@ class CarsAdapter(private var context: Context, private var cars: ArrayList<Car>
         //PASO 1: Primero debemos asignar las variables para que el onBindviewHolder las pueda encontrar y usar
         val ivCar = view.ivCar
         val tvCarName = view.tvCarName
+        var tvPrice = view.tvPrice
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,7 +35,7 @@ class CarsAdapter(private var context: Context, private var cars: ArrayList<Car>
         Glide.with(context).load(cars[position].image).into(holder.ivCar)
 
         holder.tvCarName.text = cars[position].name
-
+        holder.tvPrice.text = "$" + cars[position].price
         holder.itemView.setOnClickListener{
             (context as? MainActivity)?.selectedCar(cars[position])
         }

@@ -4,6 +4,5 @@
     <item
         android:drawable="@drawable/logo"
         android:gravity="center">
-
     </item>
 </layer-list>

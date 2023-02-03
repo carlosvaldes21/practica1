@@ -6,4 +6,10 @@
     <string name="price">Precio</string>
     <string name="colors">Colores</string>
     <string name="wheels">Llantas</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña? Clic aquí</string>
+    <string name="detail">Detalle de auto</string>
 </resources>

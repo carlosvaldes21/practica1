@@ -7,6 +7,12 @@ data class Car(
     var colors:ArrayList<String>,
     var price: String,
     var seating : ArrayList<String>,
-    var wheels: String
+    var wheels: String,
+    var coordinates: Coordinates
+)
+
+data class Coordinates(
+    var latitude: String,
+    var longitude:String
 )
 

@@ -15,23 +15,36 @@
         android:theme="@style/Theme.Practica1"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <!-- Para conectarnos a google maps -->
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+
         <activity
-            android:name=".views.activities.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".views.activities.MainActivity"
-            android:exported="true"
-            android:theme="@style/SplashTheme">
+            android:name=".views.activities.AuthActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+        </activity>
+        <activity
+            android:name=".views.activities.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Practica1">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

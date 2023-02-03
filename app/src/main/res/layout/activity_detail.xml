@@ -1,82 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.activities.DetailActivity">
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/ivCar"
-            tools:src="@drawable/ic_launcher_background"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.Practica1">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingtolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/blue"
+            app:collapsedTitleTextColor="@color/white"
+            app:expandedTitleTextColor="@color/white"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="@string/detail">
 
-        <TextView
-            android:id="@+id/tvCarName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Prosche"
-            android:textSize="44sp"/>
-        <TextView
-            android:text="@string/colors"
-            android:textSize="36sp"
-            android:textFontWeight="700"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tvColors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="@string/price"
-            android:textSize="36sp"
-            android:textFontWeight="700"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tvPrice"
-            android:textSize="24sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tvSeating"
-            android:text="@string/seating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textFontWeight="700"
-            android:textSize="36sp"/>
+            <ImageView
+                android:id="@+id/ivCar"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                tools:src="@drawable/ic_launcher_background"
+                android:layout_width="400dp"
+                android:layout_height="200dp"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/ivPiel"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                />
-            <ImageView
-                android:id="@+id/ivTela"
-                android:layout_marginLeft="20dp"
-                android:scaleType="centerCrop"
-                android:layout_width="100dp"
-                android:layout_height="100dp"/>
-        </LinearLayout>
-        <TextView
-            android:text="@string/wheels"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textFontWeight="700"
-            android:textSize="36sp"/>
-        <TextView
-            android:id="@+id/tvWheels"
-            android:textSize="24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Prosche"
+                android:textSize="44sp"/>
+            <TextView
+                android:text="@string/colors"
+                android:textSize="36sp"
+                android:textFontWeight="700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvColors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/price"
+                android:textSize="36sp"
+                android:textFontWeight="700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvPrice"
+                android:textSize="24sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvSeating"
+                android:text="@string/seating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textFontWeight="700"
+                android:textSize="36sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivPiel"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    />
+                <ImageView
+                    android:id="@+id/ivTela"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+            </LinearLayout>
+            <TextView
+                android:text="@string/wheels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textFontWeight="700"
+                android:textSize="36sp"/>
+            <TextView
+                android:id="@+id/tvWheels"
+                android:textSize="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <fragment
+                android:id="@+id/fragmentMaps"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:name="com.google.android.gms.maps.SupportMapFragment">
+            </fragment>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
