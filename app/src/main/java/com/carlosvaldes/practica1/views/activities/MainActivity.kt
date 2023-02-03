@@ -1,10 +1,12 @@
 package com.carlosvaldes.practica1.views.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlosvaldes.practica1.R
 import com.carlosvaldes.practica1.databinding.ActivityMainBinding
@@ -12,6 +14,7 @@ import com.carlosvaldes.practica1.models.Car
 import com.carlosvaldes.practica1.network.CarsApi
 import com.carlosvaldes.practica1.network.RetrofitService
 import com.carlosvaldes.practica1.views.adapaters.CarsAdapter
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,14 +22,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.mainToolbar)
+
 
         //Utilizamos corutinas para no bloquear el hilo principal
         CoroutineScope(Dispatchers.IO).launch {
@@ -62,6 +67,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.logout -> {
+                FirebaseAuth.getInstance().signOut();
+                showAuth()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     fun selectedCar(car: Car) {
         val params = Bundle().apply {
             putString("id", car.id)
@@ -72,5 +93,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         startActivity(intent)
+    }
+
+    private fun showAuth()
+    {
+        val authIntent = Intent(this, AuthActivity::class.java).apply {}
+
+        startActivity(authIntent)
+        finish()
     }
 }

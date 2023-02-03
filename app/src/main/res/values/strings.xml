@@ -12,4 +12,6 @@
     <string name="login">Iniciar sesión</string>
     <string name="forgot_password">¿Olvidaste tu contraseña? Clic aquí</string>
     <string name="detail">Detalle de auto</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="main_title">Autos disponibles</string>
 </resources>
